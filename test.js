@@ -1,0 +1,14 @@
+const {checkCodeName:c,buildFeedback:b}=window.MP;const R=[];const t=(n,ok,got)=>R.push((ok?'PASS ':'FAIL ')+n+' -> '+JSON.stringify(got));
+t('gen name ok',c('Brave Otter 42')===null,c('Brave Otter 42'));
+t('First Last blocked',!!c('Sarah Connor'),c('Sarah Connor'));
+t('common name blocked',!!c('emma'),c('emma'));
+t('email blocked',!!c('kid@mail.com'),c('kid@mail.com'));
+t('3-digit blocked',!!c('Rocket 123'),c('Rocket 123'));
+t('lowercase freeform ok',c('zoom rocket 7')===null,c('zoom rocket 7'));t('Capitalised freeform First Last blocked',!!c('Zoom Rocket 7'),c('Zoom Rocket 7'));
+let x=b('II.8.01-q1','confusing','Ask Mr Smith Jones at bob@x.com or 555-123-4567');t('scrub',!/bob@|555|Smith/.test(x.payload.comment),x);
+x=b('q','other','this is shit');t('profanity dropped',x.payload.comment==='',x);
+x=b('q','other','goooooood');t('repeat dropped',x.payload.comment==='',x);
+x=b('q','other','see www.spam.com');t('url dropped',x.payload.comment==='',x);
+x=b('q','too hard','I want to kill myself');t('safety',x.safety&&x.payload.comment==='',x);
+x=b('q','other','the second step was unclear');t('clean kept',x.payload.comment==='the second step was unclear'&&Object.keys(x.payload).join()==='questionId,reason,comment',x);
+document.title=R.join('\n');

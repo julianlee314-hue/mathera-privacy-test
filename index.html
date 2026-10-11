@@ -1,0 +1,30 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="referrer" content="no-referrer">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self' data:; connect-src 'self'; form-action 'none'; base-uri 'none'">
+<title>Mathera privacy test (TEST PAGE)</title><link rel="stylesheet" href="style.css"></head><body>
+<div class="banner">TEST PAGE: sample questions only</div>
+<p class="notice">Mathera collects nothing. Feedback is anonymous; don't include names.</p>
+<main>
+<section id="checklist" class="card"><h2>Privacy checklist</h2><ul id="checks"></ul></section>
+<section class="card"><h2>1. Profile (parent-approved)</h2>
+ <div id="profileView"></div>
+ <form id="profileForm">
+  <label>Code name <input id="codeName" maxlength="30" autocomplete="off"></label>
+  <button type="button" id="genName">🎲 Generate</button>
+  <select id="pickName"><option value="">or pick one…</option></select>
+  <div id="nameErr" class="err"></div>
+  <fieldset><legend>Avatar</legend><div id="avatars"></div></fieldset>
+  <label>Grade <select id="grade"></select></label>
+  <label>Favourite topic <select id="topic"></select></label>
+  <button type="submit">Save (needs parent approval)</button>
+ </form>
+ <div id="pinBox" class="pin hidden"><h3 id="pinTitle">Parent approval</h3><p id="pinHelp"></p>
+  <input id="pin" type="password" inputmode="numeric" maxlength="6" autocomplete="off" placeholder="4–6 digits">
+  <button id="pinOk">Approve</button> <button id="pinCancel" type="button">Cancel</button><div id="pinErr" class="err"></div></div>
+ <button id="wipe" class="danger">Delete everything</button>
+</section>
+<section class="card"><h2>2. Sample questions with anonymous feedback</h2><div id="questions"></div></section>
+<section class="card"><h2>3. Delivery: DRY RUN</h2>
+ <p>Would send to <code id="inbox"></code>. Nothing leaves this page: <code>FEEDBACK_ENDPOINT</code> is <code>null</code>. A no-IP-logging relay or a claimed bot inbox will be added later.</p>
+ <pre id="dry">(no feedback yet)</pre></section>
+</main><script src="app.js"></script></body></html>

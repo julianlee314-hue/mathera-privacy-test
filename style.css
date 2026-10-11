@@ -1,0 +1,11 @@
+body{font-family:system-ui,sans-serif;margin:0;background:#f6f4ee;color:#222}
+.banner{background:#c62828;color:#fff;font-size:1.6rem;font-weight:800;text-align:center;padding:14px;letter-spacing:.03em}
+.notice{text-align:center;font-weight:600;background:#fff3c4;margin:0;padding:8px}
+main{max-width:860px;margin:auto;padding:12px}.card{background:#fff;border-radius:8px;padding:12px 16px;margin:12px 0;box-shadow:0 1px 3px #0002}
+label{display:block;margin:6px 0}.err{color:#b00020;min-height:1.1em}.hidden{display:none}
+.pin{border:2px solid #333;padding:10px;margin:10px 0;background:#eef}.danger{background:#b00020;color:#fff;border:0;padding:6px 10px;margin-top:8px}
+.q{border-top:1px solid #ddd;padding:8px 0}.q small{color:#777}.ok{color:#2e7d32}.no{color:#b00020}
+.fb{background:#fafafa;padding:6px;margin-top:4px}.fb button.sel{background:#333;color:#fff}
+textarea{width:100%;box-sizing:border-box}pre{background:#111;color:#9f9;padding:10px;white-space:pre-wrap}
+.safety{background:#e3f2fd;padding:8px;font-weight:600}#avatars label{display:inline-block;font-size:1.5rem;margin-right:8px}
+.pending{color:#e65100;font-weight:700}#checks li.pass::before{content:"✅ "}#checks li.fail::before{content:"❌ "}
